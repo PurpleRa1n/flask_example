@@ -1,0 +1,14 @@
+*.pyc
+*~
+__pycache__
+_pycache_
+myvenv
+*.sqlite
+/static
+.DS_Store
+htmlcov
+.coverage
+.cache
+.idea
+venv
+

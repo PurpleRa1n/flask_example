@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <form action='' method='POST'>
+        {{ form.hidden_tag() }} <!-- crsf -->
+        <div class='form-group'>
+            {{ form.name.label() }}
+            {% if form.name.errors %}
+                {{ form.name(class="form-contol is-invalid") }}
+                <div class='invalid-feedback'>
+                    {% for error in form.name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.name(class="form-contol") }}
+            {% endif %}
+        </div>
+        <div class='form-group'>
+            {{ form.description.label() }}
+            {{ form.description(class="form-contol") }}
+        </div>
+        <div class='form-group'>
+            {{ form.price.label() }}
+            {{ form.price(class="form-contol") }}
+        </div>
+        <div class='form-group'>
+            {{ form.qty.label() }}
+            {{ form.qty(class="form-contol") }}
+        </div>
+        <div class='form-group'>
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+{% endblock content %}
